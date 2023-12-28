@@ -21,11 +21,6 @@
       "static/chunks/main-app.js",
       "static/css/app/(root)/events/create/page.css",
       "static/chunks/app/(root)/events/create/page.js"
-    ],
-    "/(root)/profile/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/(root)/profile/page.js"
     ]
   }
 }

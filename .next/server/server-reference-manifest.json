@@ -3,85 +3,71 @@
     "26e6dd1aa3b4e629c82f1bdc5a1ecf2b70a43597": {
       "workers": {
         "app/(root)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=!",
-        "app/(root)/events/create/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fcategory.actions.ts%22%2C%5B%22createCategory%22%2C%22getAllCategories%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=true!",
-        "app/(root)/profile/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Forder.actions.ts%22%2C%5B%22getOrdersByUser%22%2C%22createOrder%22%2C%22getOrdersByEvent%22%2C%22checkoutOrder%22%5D%5D%5D&__client_imported__=!"
+        "app/(root)/events/create/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fcategory.actions.ts%22%2C%5B%22createCategory%22%2C%22getAllCategories%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
         "app/(root)/page": "rsc",
-        "app/(root)/events/create/page": "action-browser",
-        "app/(root)/profile/page": "rsc"
+        "app/(root)/events/create/page": "action-browser"
       }
     },
     "6c5005ccb321e095ec67670d8c8a290132768b98": {
       "workers": {
         "app/(root)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=!",
-        "app/(root)/events/create/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fcategory.actions.ts%22%2C%5B%22createCategory%22%2C%22getAllCategories%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=true!",
-        "app/(root)/profile/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Forder.actions.ts%22%2C%5B%22getOrdersByUser%22%2C%22createOrder%22%2C%22getOrdersByEvent%22%2C%22checkoutOrder%22%5D%5D%5D&__client_imported__=!"
+        "app/(root)/events/create/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fcategory.actions.ts%22%2C%5B%22createCategory%22%2C%22getAllCategories%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
         "app/(root)/page": "rsc",
-        "app/(root)/events/create/page": "action-browser",
-        "app/(root)/profile/page": "rsc"
+        "app/(root)/events/create/page": "action-browser"
       }
     },
     "7b687c7bdc7641bb8a44d32b7ecd2b2e592874f1": {
       "workers": {
         "app/(root)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=!",
-        "app/(root)/events/create/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fcategory.actions.ts%22%2C%5B%22createCategory%22%2C%22getAllCategories%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=true!",
-        "app/(root)/profile/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Forder.actions.ts%22%2C%5B%22getOrdersByUser%22%2C%22createOrder%22%2C%22getOrdersByEvent%22%2C%22checkoutOrder%22%5D%5D%5D&__client_imported__=!"
+        "app/(root)/events/create/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fcategory.actions.ts%22%2C%5B%22createCategory%22%2C%22getAllCategories%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
         "app/(root)/page": "rsc",
-        "app/(root)/events/create/page": "action-browser",
-        "app/(root)/profile/page": "rsc"
+        "app/(root)/events/create/page": "action-browser"
       }
     },
     "7f145236351e991bd0b22c0747301a2074c772ae": {
       "workers": {
         "app/(root)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=!",
-        "app/(root)/events/create/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fcategory.actions.ts%22%2C%5B%22createCategory%22%2C%22getAllCategories%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=true!",
-        "app/(root)/profile/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Forder.actions.ts%22%2C%5B%22getOrdersByUser%22%2C%22createOrder%22%2C%22getOrdersByEvent%22%2C%22checkoutOrder%22%5D%5D%5D&__client_imported__=!"
+        "app/(root)/events/create/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fcategory.actions.ts%22%2C%5B%22createCategory%22%2C%22getAllCategories%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
         "app/(root)/page": "rsc",
-        "app/(root)/events/create/page": "action-browser",
-        "app/(root)/profile/page": "rsc"
+        "app/(root)/events/create/page": "action-browser"
       }
     },
     "a282015290e37aaa5beb828299cde4191bb35db3": {
       "workers": {
         "app/(root)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=!",
-        "app/(root)/events/create/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fcategory.actions.ts%22%2C%5B%22createCategory%22%2C%22getAllCategories%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=true!",
-        "app/(root)/profile/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Forder.actions.ts%22%2C%5B%22getOrdersByUser%22%2C%22createOrder%22%2C%22getOrdersByEvent%22%2C%22checkoutOrder%22%5D%5D%5D&__client_imported__=!"
+        "app/(root)/events/create/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fcategory.actions.ts%22%2C%5B%22createCategory%22%2C%22getAllCategories%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
         "app/(root)/page": "rsc",
-        "app/(root)/events/create/page": "action-browser",
-        "app/(root)/profile/page": "rsc"
+        "app/(root)/events/create/page": "action-browser"
       }
     },
     "a59f29dfa6de24e9fbc42622652d0e17cc4798b6": {
       "workers": {
         "app/(root)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=!",
-        "app/(root)/events/create/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fcategory.actions.ts%22%2C%5B%22createCategory%22%2C%22getAllCategories%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=true!",
-        "app/(root)/profile/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Forder.actions.ts%22%2C%5B%22getOrdersByUser%22%2C%22createOrder%22%2C%22getOrdersByEvent%22%2C%22checkoutOrder%22%5D%5D%5D&__client_imported__=!"
+        "app/(root)/events/create/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fcategory.actions.ts%22%2C%5B%22createCategory%22%2C%22getAllCategories%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
         "app/(root)/page": "rsc",
-        "app/(root)/events/create/page": "action-browser",
-        "app/(root)/profile/page": "rsc"
+        "app/(root)/events/create/page": "action-browser"
       }
     },
     "aa5378f88b4db15cee34a5f7025534875eda3656": {
       "workers": {
         "app/(root)/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=!",
-        "app/(root)/events/create/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fcategory.actions.ts%22%2C%5B%22createCategory%22%2C%22getAllCategories%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=true!",
-        "app/(root)/profile/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Forder.actions.ts%22%2C%5B%22getOrdersByUser%22%2C%22createOrder%22%2C%22getOrdersByEvent%22%2C%22checkoutOrder%22%5D%5D%5D&__client_imported__=!"
+        "app/(root)/events/create/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fcategory.actions.ts%22%2C%5B%22createCategory%22%2C%22getAllCategories%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
         "app/(root)/page": "rsc",
-        "app/(root)/events/create/page": "action-browser",
-        "app/(root)/profile/page": "rsc"
+        "app/(root)/events/create/page": "action-browser"
       }
     },
     "2ca9675e602b04d3dd07ce28f46a82da50032148": {
@@ -103,40 +89,8 @@
         "app/(root)/page": "action-browser",
         "app/(root)/events/create/page": "action-browser"
       }
-    },
-    "0bca078b8d01915592f88a0339032899496406ef": {
-      "workers": {
-        "app/(root)/profile/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Forder.actions.ts%22%2C%5B%22getOrdersByUser%22%2C%22createOrder%22%2C%22getOrdersByEvent%22%2C%22checkoutOrder%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/(root)/profile/page": "rsc"
-      }
-    },
-    "45c36647f1f58d63867930ed3b5b3e338a1bde29": {
-      "workers": {
-        "app/(root)/profile/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Forder.actions.ts%22%2C%5B%22getOrdersByUser%22%2C%22createOrder%22%2C%22getOrdersByEvent%22%2C%22checkoutOrder%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/(root)/profile/page": "rsc"
-      }
-    },
-    "9557e51dc18fea056c3b992a4fbeec07d94223ba": {
-      "workers": {
-        "app/(root)/profile/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Forder.actions.ts%22%2C%5B%22getOrdersByUser%22%2C%22createOrder%22%2C%22getOrdersByEvent%22%2C%22checkoutOrder%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/(root)/profile/page": "rsc"
-      }
-    },
-    "efcc8ecbfaa43dc6af0bb986f77ea6ac90374093": {
-      "workers": {
-        "app/(root)/profile/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Fevent.actions.ts%22%2C%5B%22getRelatedEventsByCategory%22%2C%22deleteEvent%22%2C%22getEventsByUser%22%2C%22updateEvent%22%2C%22getAllEvents%22%2C%22createEvent%22%2C%22getEventById%22%5D%5D%2C%5B%22%2FUsers%2Fsamouma%2FDesktop%2Feventzup_254%2Flib%2Factions%2Forder.actions.ts%22%2C%5B%22getOrdersByUser%22%2C%22createOrder%22%2C%22getOrdersByEvent%22%2C%22checkoutOrder%22%5D%5D%5D&__client_imported__=!"
-      },
-      "layer": {
-        "app/(root)/profile/page": "rsc"
-      }
     }
   },
   "edge": {},
-  "encryptionKey": "4CKe1VA60Pho/sNwdwlu9TU+/+6ro1FGJJaIQY5j+xI="
+  "encryptionKey": "bnZyOx5ItCDSfdOOZMH8/PPkugueZ3oFqqLlevc86Gg="
 }
