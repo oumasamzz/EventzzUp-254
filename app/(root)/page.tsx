@@ -30,8 +30,9 @@ export default async function Home({ searchParams }: SearchParamProps) {
               platform!
             </h1>
             <p className="p-regular-20 md:p-regular-24">
-              Book and learn helpful tips from 3,168+ mentors in world-class
-              companies with our global community.
+              Whether you are into sporting events or just want to learn new
+              things from 2,000+ mentors in world-class companies with our
+              global community.
             </p>
             <Button size="lg" asChild className="button w-full sm:w-fit">
               <Link href="#events">Explore Now</Link>
@@ -39,7 +40,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
           </div>
 
           <Image
-            src="/assets/images/hero.png"
+            src="/assets/images/eventzcollage.png"
             alt="hero"
             width={1000}
             height={1000}
