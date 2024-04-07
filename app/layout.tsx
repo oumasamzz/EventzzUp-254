@@ -11,10 +11,10 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Eventz-Up',
-  description: 'Eventz-Up is a platform for event management in Kenya.',
+  title: 'EventzUp',
+  description: 'EventzUp is a platform for event management.',
   icons: {
-    icon: '/assets/images/favicon.png',
+    icon: '/assets/images/eventzup254-.png',
   },
 }
 
