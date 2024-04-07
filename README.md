@@ -440,7 +440,7 @@ body {
 
 ```typescript
 /** @type {import('tailwindcss').Config} */
-import { withUt } from 'uploadthing/tw';
+import { withUt } from 'uploadthing/tw'
 
 module.exports = withUt({
   darkMode: ['class'],
@@ -508,7 +508,7 @@ module.exports = withUt({
         },
       },
       fontFamily: {
-        poppins: ['var(--font-poppins)'],
+        poppins: 'var(--font-poppins)',
       },
       backgroundImage: {
         'dotted-pattern': "url('/assets/images/dotted-pattern.png')",
@@ -536,9 +536,8 @@ module.exports = withUt({
     },
   },
   plugins: [require('tailwindcss-animate')],
-});
+})
 ```
-
 </details>
 
 <details>
@@ -548,61 +547,63 @@ module.exports = withUt({
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
 import { WebhookEvent } from '@clerk/nextjs/server'
-import { createUser, deleteUser, updateUser } from '@/lib/actions/user.actions'
-import { clerkClient } from '@clerk/nextjs'
 import { NextResponse } from 'next/server'
- 
+import { clerkClient } from '@clerk/nextjs'
+
+import { createUser, updateUser, deleteUser } from '@/lib/actions/user.actions'
+
 export async function POST(req: Request) {
- 
+
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
-  const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET
- 
+  const WEBHOOK_SECRET = process.env.NEXT_CLERK_WEBHOOK_SECRET
+
   if (!WEBHOOK_SECRET) {
     throw new Error('Please add WEBHOOK_SECRET from Clerk Dashboard to .env or .env.local')
   }
- 
+
   // Get the headers
-  const headerPayload = headers();
-  const svix_id = headerPayload.get("svix-id");
-  const svix_timestamp = headerPayload.get("svix-timestamp");
-  const svix_signature = headerPayload.get("svix-signature");
- 
+  const headerPayload = headers()
+  const svix_id = headerPayload.get('svix-id')
+  const svix_timestamp = headerPayload.get('svix-timestamp')
+  const svix_signature = headerPayload.get('svix-signature')
+
   // If there are no headers, error out
   if (!svix_id || !svix_timestamp || !svix_signature) {
     return new Response('Error occured -- no svix headers', {
-      status: 400
+      status: 400,
     })
   }
- 
+
   // Get the body
   const payload = await req.json()
-  const body = JSON.stringify(payload);
- 
+  const body = JSON.stringify(payload)
+
   // Create a new Svix instance with your secret.
-  const wh = new Webhook(WEBHOOK_SECRET);
- 
+  const wh = new Webhook(WEBHOOK_SECRET)
+
   let evt: WebhookEvent
- 
+
   // Verify the payload with the headers
   try {
     evt = wh.verify(body, {
-      "svix-id": svix_id,
-      "svix-timestamp": svix_timestamp,
-      "svix-signature": svix_signature,
+      'svix-id': svix_id,
+      'svix-timestamp': svix_timestamp,
+      'svix-signature': svix_signature,
     }) as WebhookEvent
   } catch (err) {
-    console.error('Error verifying webhook:', err);
+    console.error('Error verifying webhook:', err)
     return new Response('Error occured', {
-      status: 400
+      status: 400,
     })
   }
- 
+
   // Get the ID and type
-  const { id } = evt.data;
-  const eventType = evt.type;
- 
-  if(eventType === 'user.created') {
-    const { id, email_addresses, image_url, first_name, last_name, username } = evt.data;
+  const eventType = evt.type
+
+  // TODO START CHANGES
+  // CREATE
+  if (eventType === 'user.created') {
+    const { id, email_addresses, image_url, first_name, last_name, username } = evt.data
 
     const user = {
       clerkId: id,
@@ -613,20 +614,22 @@ export async function POST(req: Request) {
       photo: image_url,
     }
 
-    const newUser = await createUser(user);
+    const newUser = await createUser(user)
 
-    if(newUser) {
+    if (newUser) {
       await clerkClient.users.updateUserMetadata(id, {
         publicMetadata: {
-          userId: newUser._id
-        }
+          userId: newUser._id,
+        },
       })
     }
 
     return NextResponse.json({ message: 'OK', user: newUser })
   }
 
+  // UPDATE
   if (eventType === 'user.updated') {
+
     const {id, image_url, first_name, last_name, username } = evt.data
 
     const user = {
@@ -641,6 +644,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ message: 'OK', user: updatedUser })
   }
 
+  // DELETE
   if (eventType === 'user.deleted') {
     const { id } = evt.data
 
@@ -648,7 +652,8 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: 'OK', user: deletedUser })
   }
- 
+  // TODO END CHANGES
+
   return new Response('', { status: 200 })
 }
 ```
@@ -662,17 +667,18 @@ export async function POST(req: Request) {
 
 import { revalidatePath } from 'next/cache'
 
-import { connectToDatabase } from '@/lib/database'
-import User from '@/lib/database/models/user.model'
-import Order from '@/lib/database/models/order.model'
-import Event from '@/lib/database/models/event.model'
+import { connectToDB } from '@/lib/mongodb/mongoose'
+import User from '@/lib/mongodb/models/user.model'
+import Order from '@/lib/mongodb/models/order.model'
+import Event from '@/lib/mongodb/models/event.model'
 import { handleError } from '@/lib/utils'
 
 import { CreateUserParams, UpdateUserParams } from '@/types'
 
+// CREATE
 export async function createUser(user: CreateUserParams) {
   try {
-    await connectToDatabase()
+    await connectToDB()
 
     const newUser = await User.create(user)
     return JSON.parse(JSON.stringify(newUser))
@@ -681,9 +687,10 @@ export async function createUser(user: CreateUserParams) {
   }
 }
 
+// READ
 export async function getUserById(userId: string) {
   try {
-    await connectToDatabase()
+    await connectToDB()
 
     const user = await User.findById(userId)
 
@@ -694,9 +701,10 @@ export async function getUserById(userId: string) {
   }
 }
 
+// UPDATE
 export async function updateUser(clerkId: string, user: UpdateUserParams) {
   try {
-    await connectToDatabase()
+    await connectToDB()
 
     const updatedUser = await User.findOneAndUpdate({ clerkId }, user, { new: true })
 
@@ -707,9 +715,10 @@ export async function updateUser(clerkId: string, user: UpdateUserParams) {
   }
 }
 
+//===============================
 export async function deleteUser(clerkId: string) {
   try {
-    await connectToDatabase()
+    await connectToDB()
 
     // Find user to delete
     const userToDelete = await User.findOne({ clerkId })
@@ -744,9 +753,8 @@ export async function deleteUser(clerkId: string) {
 
 <details>
 <summary><code>order.model.ts</code></summary>
-  
 ```typescript
-import { Schema, model, models, Document } from 'mongoose'
+  import { Schema, model, models, Document } from 'mongoose'
 
 export interface IOrder extends Document {
   createdAt: Date
@@ -799,7 +807,6 @@ const Order = models.Order || model('Order', OrderSchema)
 
 export default Order
 ```
-
 </details>
 
 <details>
@@ -863,7 +870,6 @@ export function FileUploader({ imageUrl, onFieldChange, setFiles }: FileUploader
   )
 }
 ```
-
 </details>
 
 <details>
@@ -917,7 +923,7 @@ export const DeleteConfirmation = ({ eventId }: { eventId: string }) => {
                 await deleteEvent({ eventId, path: pathname })
               })
             }>
-            {isPending ? 'Deleting...' : 'Delete'}
+            {isPending ? 'Delteing...' : 'Delete'}
           </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
@@ -936,10 +942,10 @@ export const DeleteConfirmation = ({ eventId }: { eventId: string }) => {
 
 import { revalidatePath } from 'next/cache'
 
-import { connectToDatabase } from '@/lib/database'
-import Event from '@/lib/database/models/event.model'
-import User from '@/lib/database/models/user.model'
-import Category from '@/lib/database/models/category.model'
+import { connectToDB } from '@/lib/mongodb/mongoose'
+import Event from '@/lib/mongodb/models/event.model'
+import User from '@/lib/mongodb/models/user.model'
+import Category from '@/lib/mongodb/models/category.model'
 import { handleError } from '@/lib/utils'
 
 import {
@@ -950,6 +956,7 @@ import {
   GetEventsByUserParams,
   GetRelatedEventsByCategoryParams,
 } from '@/types'
+import events from 'events'
 
 const getCategoryByName = async (name: string) => {
   return Category.findOne({ name: { $regex: name, $options: 'i' } })
@@ -964,7 +971,7 @@ const populateEvent = (query: any) => {
 // CREATE
 export async function createEvent({ userId, event, path }: CreateEventParams) {
   try {
-    await connectToDatabase()
+    await connectToDB()
 
     const organizer = await User.findById(userId)
     if (!organizer) throw new Error('Organizer not found')
@@ -981,7 +988,7 @@ export async function createEvent({ userId, event, path }: CreateEventParams) {
 // GET ONE EVENT BY ID
 export async function getEventById(eventId: string) {
   try {
-    await connectToDatabase()
+    await connectToDB()
 
     const event = await populateEvent(Event.findById(eventId))
 
@@ -996,7 +1003,7 @@ export async function getEventById(eventId: string) {
 // UPDATE
 export async function updateEvent({ userId, event, path }: UpdateEventParams) {
   try {
-    await connectToDatabase()
+    await connectToDB()
 
     const eventToUpdate = await Event.findById(event._id)
     if (!eventToUpdate || eventToUpdate.organizer.toHexString() !== userId) {
@@ -1019,7 +1026,7 @@ export async function updateEvent({ userId, event, path }: UpdateEventParams) {
 // DELETE
 export async function deleteEvent({ eventId, path }: DeleteEventParams) {
   try {
-    await connectToDatabase()
+    await connectToDB()
 
     const deletedEvent = await Event.findByIdAndDelete(eventId)
     if (deletedEvent) revalidatePath(path)
@@ -1031,7 +1038,7 @@ export async function deleteEvent({ eventId, path }: DeleteEventParams) {
 // GET ALL EVENTS
 export async function getAllEvents({ query, limit = 6, page, category }: GetAllEventsParams) {
   try {
-    await connectToDatabase()
+    await connectToDB()
 
     const titleCondition = query ? { title: { $regex: query, $options: 'i' } } : {}
     const categoryCondition = category ? await getCategoryByName(category) : null
@@ -1060,7 +1067,7 @@ export async function getAllEvents({ query, limit = 6, page, category }: GetAllE
 // GET EVENTS BY ORGANIZER
 export async function getEventsByUser({ userId, limit = 6, page }: GetEventsByUserParams) {
   try {
-    await connectToDatabase()
+    await connectToDB()
 
     const conditions = { organizer: userId }
     const skipAmount = (page - 1) * limit
@@ -1087,7 +1094,7 @@ export async function getRelatedEventsByCategory({
   page = 1,
 }: GetRelatedEventsByCategoryParams) {
   try {
-    await connectToDatabase()
+    await connectToDB()
 
     const skipAmount = (Number(page) - 1) * limit
     const conditions = { $and: [{ category: categoryId }, { _id: { $ne: eventId } }] }
@@ -1113,22 +1120,30 @@ export async function getRelatedEventsByCategory({
 <summary><code>order.action.ts</code></summary>
 
 ```typescript
-"use server"
+'use server'
 
-import Stripe from 'stripe';
-import { CheckoutOrderParams, CreateOrderParams, GetOrdersByEventParams, GetOrdersByUserParams } from "@/types"
-import { redirect } from 'next/navigation';
-import { handleError } from '../utils';
-import { connectToDatabase } from '../database';
-import Order from '../database/models/order.model';
-import Event from '../database/models/event.model';
-import {ObjectId} from 'mongodb';
-import User from '../database/models/user.model';
+import Stripe from 'stripe'
+import { redirect } from 'next/navigation'
+import { ObjectId } from 'mongodb'
 
-export const checkoutOrder = async (order: CheckoutOrderParams) => {
-  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
+import { connectToDB } from '@/lib/mongodb/mongoose'
+import Order from '@/lib/mongodb/models/order.model'
+import Event from '@/lib/mongodb/models/event.model'
+import User from '@/lib/mongodb/models/user.model'
+import { handleError } from '@/lib/utils'
 
-  const price = order.isFree ? 0 : Number(order.price) * 100;
+import {
+  CheckoutOrderParams,
+  CreateOrderParams,
+  GetOrdersByEventParams,
+  GetOrdersByUserParams,
+} from '@/types'
+
+// CHECKOUT
+export async function checkoutOrder(order: CheckoutOrderParams) {
+  const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!)
+
+  const price = order.isFree ? 0 : Number(order.price) * 100
 
   try {
     const session = await stripe.checkout.sessions.create({
@@ -1138,10 +1153,10 @@ export const checkoutOrder = async (order: CheckoutOrderParams) => {
             currency: 'usd',
             unit_amount: price,
             product_data: {
-              name: order.eventTitle
-            }
+              name: order.eventTitle,
+            },
           },
-          quantity: 1
+          quantity: 1,
         },
       ],
       metadata: {
@@ -1151,34 +1166,35 @@ export const checkoutOrder = async (order: CheckoutOrderParams) => {
       mode: 'payment',
       success_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/profile`,
       cancel_url: `${process.env.NEXT_PUBLIC_SERVER_URL}/`,
-    });
+    })
 
     redirect(session.url!)
   } catch (error) {
-    throw error;
+    throw error
   }
 }
 
-export const createOrder = async (order: CreateOrderParams) => {
+// CREATE
+export async function createOrder(order: CreateOrderParams) {
   try {
-    await connectToDatabase();
-    
+    await connectToDB()
+
     const newOrder = await Order.create({
       ...order,
       event: order.eventId,
       buyer: order.buyerId,
-    });
+    })
 
-    return JSON.parse(JSON.stringify(newOrder));
+    return JSON.parse(JSON.stringify(newOrder))
   } catch (error) {
-    handleError(error);
+    handleError(error)
   }
 }
 
 // GET ORDERS BY EVENT
 export async function getOrdersByEvent({ searchString, eventId }: GetOrdersByEventParams) {
   try {
-    await connectToDatabase()
+    await connectToDB()
 
     if (!eventId) throw new Error('Event ID is required')
     const eventObjectId = new ObjectId(eventId)
@@ -1234,7 +1250,7 @@ export async function getOrdersByEvent({ searchString, eventId }: GetOrdersByEve
 // GET ORDERS BY USER
 export async function getOrdersByUser({ userId, limit = 3, page }: GetOrdersByUserParams) {
   try {
-    await connectToDatabase()
+    await connectToDB()
 
     const skipAmount = (Number(page) - 1) * limit
     const conditions = { buyer: userId }
@@ -1269,11 +1285,11 @@ export async function getOrdersByUser({ userId, limit = 3, page }: GetOrdersByUs
 <summary><code>orders/page.tsx</code></summary>
 
 ```typescript
-import Search  from '@/components/shared/Search'
+import { Search } from '@/components/shared/Search'
 import { getOrdersByEvent } from '@/lib/actions/order.actions'
 import { formatDateTime, formatPrice } from '@/lib/utils'
 import { SearchParamProps } from '@/types'
-import { IOrderItem } from '@/lib/database/models/order.model'
+import { IOrderItem } from '@/lib/mongodb/models/order.model'
 
 const Orders = async ({ searchParams }: SearchParamProps) => {
   const eventId = (searchParams?.eventId as string) || ''
@@ -1344,7 +1360,7 @@ export default Orders
 
 ## <a name="links">🔗 Links</a>
 
-All assets used in the project can be found [here](https://drive.google.com/file/d/1hoRwUtTFIiuOXPw-SDYj6wk4hZTMcYmL/view?usp=sharing)
+All assets used in the project can be found [here](https://drive.google.com/file/d/1O7Th9vWcbPIwJQB_mJR3507LUk2kYgVQ/view?usp=sharing)
 
 ## <a name="more">🚀 More</a>
 
